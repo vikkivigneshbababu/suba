@@ -3,18 +3,9 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Check if user has a preference stored in localStorage
+  // Always use dark mode
   const getInitialTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme;
-    }
-    
-    // Check if user prefers dark mode in their OS settings
-    return window.matchMedia && 
-      window.matchMedia('(prefers-color-scheme: dark)').matches 
-      ? 'dark' 
-      : 'light';
+    return 'dark';
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
@@ -25,13 +16,13 @@ export const ThemeProvider = ({ children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Toggle between light and dark themes
-  // const toggleTheme = () => {
-  //   setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  // };
+  // Always set to dark theme
+  const toggleTheme = () => {
+    setTheme('dark');
+  };
 
   return (
-    <ThemeContext.Provider value={{ theme,  }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
