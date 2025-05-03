@@ -70,7 +70,7 @@ function Home() {
                 transition={{ delay: 1, duration: 0.5 }}
               >
                 <div className="hero-stat">
-                  <span className="hero-stat-number">3+</span>
+                  <span className="hero-stat-number">2+</span>
                   <span className="hero-stat-text">Years Experience</span>
                 </div>
                 <div className="hero-stat">
