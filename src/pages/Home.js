@@ -263,7 +263,7 @@ function Home() {
                 <i className="fas fa-briefcase mr-2"></i> View Experience
               </Link>
               <Link to="/certifications" className="btn btn-outline-white">
-                <i className="fas fa-certificate mr-2"></i> View Certifications
+                <i className="fas fa-certificate mr-2"></i> View Certification
               </Link>
             </div>
           </motion.div>
